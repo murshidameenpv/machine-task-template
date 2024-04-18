@@ -74,7 +74,15 @@
   };
     const handleCancel = () => {
       document.getElementById("my_modal_5").close(); 
-    };       
+        };    
+    const resetForm = () => {
+      // Reset state variables
+      setMilestoneValue("");
+      setNewMilestone("");
+      setShowRecommendations(false);
+      setTaskValues([]);
+      setMilestones([]);
+    };    
         return (
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -343,6 +351,7 @@
             <div className="flex justify-between">
               <button
                 type="reset"
+                onClick={resetForm}
                 className="border-2 border-[#131650] text-[#131650] bg-transparent  px-6 rounded hover:bg-indigo-100"
               >
                 Cancel
